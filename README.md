@@ -39,10 +39,8 @@
 ```
 flappy-bird-h5/
 ├── index.html            # 游戏主页面
-├── css/
-│   └── style.css         # 页面和游戏UI的样式文件
-├── js/
-│   └── script.js         # 核心游戏逻辑，包括 Canvas 绘制、物理计算、状态管理和事件处理
+├── style.css         # 页面和游戏UI的样式文件
+├── game.js         # 核心游戏逻辑，包括 Canvas 绘制、物理计算、状态管理和事件处理
 └── assets/
     └── sounds/           # 存放游戏音效文件（例如：flap.wav, score.wav, hit.wav, die.wav）
 ```
@@ -101,7 +99,7 @@ flappy-bird-h5/
 
 ## ⚙️ 游戏参数配置
 
-您可以在 `js/script.js` 文件中找到并调整以下常量，以自定义游戏体验和难度：
+您可以在 `game.js` 文件中找到并调整以下常量，以自定义游戏体验和难度：
 
 ```javascript
 // ====== 2. 游戏配置 (逻辑尺寸和物理参数) ======
