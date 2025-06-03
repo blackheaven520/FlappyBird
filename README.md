@@ -141,4 +141,3 @@ const COLORS = {
 
 ---
 
-希望这个 README 文件能帮助您和项目的用户更好地理解和使用这个 Flappy Bird H5 游戏！
