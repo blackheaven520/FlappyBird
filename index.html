@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Flappy Bird H5 (Canvas Drawn)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Canvas 用于绘制游戏 -->
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- 游戏开始界面 -->
+        <div id="start-screen" class="game-overlay">
+            <h1>Flappy Bird</h1>
+            <button id="startButton">开始游戏</button>
+            <p>点击/触摸屏幕即可飞行</p>
+        </div>
+
+        <!-- 游戏结束界面 -->
+        <div id="game-over-screen" class="game-overlay hidden">
+            <h1>游戏结束！</h1>
+            <p>你的得分：<span id="finalScore">0</span></p>
+            <button id="restartButton">重新开始</button>
+        </div>
+
+        <!-- 实时得分显示 -->
+        <div id="score-display">0</div>
+    </div>
+
+    <!-- 引入游戏逻辑脚本 -->
+    <script src="game.js"></script>
+</body>
+</html>
