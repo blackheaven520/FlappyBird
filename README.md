@@ -4,7 +4,9 @@
 # 🚀 Flappy Bird H5 - 纯 Canvas 绘制版
 
 一个经典的 Flappy Bird 游戏的 H5 实现，支持手机触控和电脑鼠标点击，具备响应式布局，所有游戏元素（小鸟、管道、背景等）均通过 HTML5 Canvas API 动态绘制，不依赖任何图片资源。
-![image](https://github.com/user-attachments/assets/e8474974-3700-40c3-a9b9-91b21d35f50f)
+
+
+# ![image](https://github.com/user-attachments/assets/e8474974-3700-40c3-a9b9-91b21d35f50f)
 
 
 
