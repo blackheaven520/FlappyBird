@@ -1,0 +1,130 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* 防止页面滚动 */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3BB9FF; /* 默认背景色，可作为加载时的占位色 */
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    /* 禁用移动端长按菜单、文本选择等默认行为 */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#game-container {
+    position: relative;
+    /* max-width 和 max-height 限制游戏在PC端过大，保持视觉效果 */
+    max-width: 450px; /* 例如，原始 Flappy Bird 的比例接近 288x512，大约是 1:1.77 */
+    max-height: 800px;
+    width: 100vw; /* 在小屏幕上尽可能铺满宽度 */
+    height: 100vh; /* 在小屏幕上尽可能铺满高度 */
+    overflow: hidden; /* 隐藏超出容器的内容 */
+    box-shadow: 0 0 20px rgba(0,0,0,0.5); /* 阴影效果 */
+    background-color: transparent; /* 背景由JS绘制，这里设为透明 */
+    display: flex; /* 用于在某些情况下帮助内容居中 */
+    justify-content: center;
+    align-items: center;
+}
+
+#gameCanvas {
+    display: block; /* 移除canvas底部多余空间 */
+    background-color: transparent; /* 背景由游戏绘制 */
+    /* 禁用移动端双指缩放和长按菜单，让点击/触摸更流畅 */
+    touch-action: manipulation;
+}
+
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* 半透明黑色背景 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 10; /* 确保在canvas之上 */
+    padding: 20px; /* 内部留白 */
+    box-sizing: border-box; /* 确保padding不增加总宽度 */
+}
+
+.game-overlay h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: yellow;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.game-overlay p {
+    font-size: 1.5em;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.game-overlay button {
+    padding: 15px 30px;
+    font-size: 1.8em;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background-color: #4CAF50; /* 绿色按钮 */
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 5px 0 #388E3C; /* 3D按钮效果 */
+    transition: background-color 0.3s, transform 0.1s; /* 平滑过渡 */
+    -webkit-tap-highlight-color: transparent; /* 移除移动端点击高亮 */
+}
+
+.game-overlay button:hover {
+    background-color: #45a049;
+}
+
+.game-overlay button:active {
+    transform: translateY(3px); /* 点击时下压 */
+    box-shadow: 0 2px 0 #388E3C; /* 阴影变小 */
+}
+
+#score-display {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+    z-index: 5; /* 在canvas之上，在overlay之下 */
+}
+
+/* 用于JS控制元素的显示/隐藏 */
+.hidden {
+    display: none !important;
+}
+
+/* 媒体查询：针对不同屏幕尺寸调整字体大小或布局，提升移动端体验 */
+@media (max-width: 600px) {
+    .game-overlay h1 {
+        font-size: 2.5em;
+    }
+    .game-overlay p {
+        font-size: 1.2em;
+    }
+    .game-overlay button {
+        padding: 10px 20px;
+        font-size: 1.5em;
+    }
+    #score-display {
+        font-size: 2.5em;
+        top: 10px;
+    }
+}
